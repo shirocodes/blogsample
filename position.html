@@ -1,0 +1,51 @@
+<!-- Positioning by Banun Idris -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+    <link rel="stylesheet" href="css/position.css">
+</head>
+<body>
+    <div id="parent-container">
+        I am the main container box , positioned relatively , 
+        <!-- static -->
+         <div id="static">
+              This is default positioning or what we call static positioning 
+              <div class="absolute">
+                  This is absolute styling 
+               </div>
+         </div>
+          <div id="relative">
+              Relative positioning means the element is position 
+              relative to itself 
+
+              <div class="absolute">
+               Absolute means positioned relative to its nearest positioned
+               parent element 
+                 <br>
+       When an element is positioned absolutely, 
+       it is taken out of the normal flow and the other elements fill in its gap.  
+       This allows it to have a <span>z-index</span> property, and means that it can
+        <i>overlay</i> over other elements. <br> Basically, absolute elements 
+        are on a different layer. I've illustrated this by giving the absolute 
+        elements a box-shadow - like they're 'above' the other elements!
+         Try deleting the <span>background-color</span> property of this element!
+              </div>
+          </div>
+
+          <div id="fixed">
+            Fixed positioning means that I am positioned relative to the browser 
+            window so that when you scroll , I'll be right there.
+          </div>
+
+          
+    </div>
+
+    <button style="margin-right: 100px;">1 button</button>
+          <button>2 button</button>
+          <p style="padding: 20px; background-color: blue; color: white;">skjfksjfkdjf lfjslfjskfjkfjdjfj</p>
+    
+</body>
+</html>

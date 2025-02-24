@@ -1,0 +1,26 @@
+         /* styling using ID */
+         #heading2 {
+            text-align: center;
+            color: purple;
+        }
+        #heading3 { 
+            padding: 10px;
+            color: green;
+        }
+        #btnStyle { 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            flex-direction: column; /* stacks button vertically */
+        }
+     
+        /* class styling */
+        .headingclass {
+            text-align: center;
+            color: blue;
+            font-weight: bold;
+        }
+        /* element styling using the tag name (applies to any tag without the id/class) */
+        h5 {
+            color: blueviolet;
+        }

@@ -1,0 +1,97 @@
+/* resetting the default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* general stylings */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "nav nav"
+    "main aside"
+    "footer footer"
+    ;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* header section stylings  */
+header {
+    grid-area: header;
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+header:hover {
+    background: green;
+}
+
+/* navigation stylings */
+nav {
+    grid-area: nav;
+    background: #444;
+    padding: 10px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+nav:hover {
+    background: #555;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 15px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* main section */
+main {
+    grid-area: main;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main:hover {
+    transform: translateY(-5px)
+}
+
+/* aside styling */
+aside {
+    grid-area: aside;
+    background: #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* footer */
+footer {
+    grid-area: footer;
+    background: #444;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}

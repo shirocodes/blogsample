@@ -1,0 +1,24 @@
+p {
+    color : green;
+}
+#divButtons {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+#newPara {
+    color: yellow;
+}
+#img1 {
+    float: left;
+}
+/* img[alt="Ticket Image"]{
+    float: left;
+} */
+.divClass {
+    background-color: green;
+ }
+
+img[src="srcAttribute"]{
+
+}
