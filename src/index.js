@@ -63,3 +63,10 @@ const num1 = "10"
 
 console.log(fact + age.toString() + tail); //=> "Spinach is 5 years old"
 console.log(age + parseInt(num1))
+
+// DATA TYPE OPERATIONS (strings, number)
+// iN JS everything is an Object 
+// an object is a single entity with properties and methods that work on the properties (OOP)
+
+
+     

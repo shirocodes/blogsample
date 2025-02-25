@@ -90,3 +90,40 @@ menu A                     menu B                       menu C
                            form 
         video 1                                       video2
                            footer
+
+
+### FUNDAMENTALS OF PROGRAMMING 
+Programming is a process of writing instructions for a computer to execute 
+These instructions are written via programming languages like JS, Python, Java , C++ 
+
+#### Key Concepts 
+1. Algorithms and Logic writing 
+2. Variables and Data Types 
+3. Control Structures (Flow of Execution)
+    a/ conditional statements 
+    b/ loops
+4. Functions 
+5. OOP (Object Oriented Programming) / DOM 
+6. Error handling and Debugging 
+
+
+### JAVASCRIPT 
+1. Dynamic : no need to specify the data type 
+2. Interpreted : runs directly in browsers without compilation 
+3. Event-Driven : responds to user actions 
+4. Versatile : Works on both front end and backend(nodeJS)
+
+function nameoffunction(){
+    <!-- logic function -->
+}
+
+
+### VARIABLES 
+variables store data (what is the data types?)
+
+- Declaring variables 
+  a. var (old way , function-scoped)
+  b. let (modern, block-scoped) : mutable : allowing change 
+  c. const (constant , variable cannot be reassigned)
+
+- Scope refers to the accessibility of the variable 
