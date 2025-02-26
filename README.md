@@ -127,3 +127,19 @@ variables store data (what is the data types?)
   c. const (constant , variable cannot be reassigned)
 
 - Scope refers to the accessibility of the variable 
+
+
+### JAVASCRIPT SCOPE : understanding a variable visibility and lifetime 
+ scopes determine the visibility of your variables / functions / objects in different parts of 
+ your code 
+
+#### 4 types of scope 
+1. Global scope 
+2. Local/Function scope 
+3. Block Scope 
+4. Lexical (closure scope)
+
+#### Conditional statements 
+conditional statements allow us to control the flow of programs based of conditions 
+
+1. if statement (else if and else )
