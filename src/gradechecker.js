@@ -1,40 +1,48 @@
-// listen for the event that the DOMContent has loaded 
-document.addEventListener("DOMContentLoaded", function(){
-    // if the dom content has loaded , i want to listen for the submit action from my form 
-    const myForm = document.getElementById("submissionForm")
-    console.log("this is my form ", myForm)
-    myForm.addEventListener("submit", submitForm)
+//Listen for DOM to load
+document.addEventListener("DOMContentLoaded", function() {
+    const myForm = document.getElementById("submissionForm");
+    // console.log("This is my form", myForm);
+    myForm.addEventListener("submit", submitForm);
 })
 
-function submitForm(event){
-    //default submissions prevented on page loads 
-    event.preventDefault()
-    console.log("The function is listening to the event")
+function submitForm(event) { //Receiving event object with submission details and will execute after the submission:
+    event.preventDefault();
+    // console.log("The function is listening to the event");
 
-    // pick the username and i need to pick the score 
-    const name = document.getElementById("name").value.trim()
-    const score = document.getElementById("score").value.trim()
+    //get submission details
+    const userName = document.getElementById("name").value.trim();
+    const userScore = document.getElementById("score").value.trim();
+    const resultsOutput = document.getElementById("results");
 
-   if(name === "" && !score){
-         alert("score or name cannot be empty")
+    //checking the submitted details
+    if (userName === "" || userScore === ""||isNaN(userScore)) {
+        resultsOutput.textContent = "Insert your name and score.";
+        resultsOutput.style.color ="#ff3333";
     } else {
-        console.log(name, score)
-         /// continue with my logic 
-         /// >= 90 A . >= 80 B . >= 70 C , D
-         let grade = ""
-         const newscore = parseInt(score)
-         if(newscore >= 90){
-             grade = "A"
-         } else if(newscore >= 80){
-            grade = "B"
-         } else if(newscore >= 70){
-            grade = "C"
-         } else {
-            grade = "D"
-         }
-         console.log(grade)
-         const result_para = document.getElementById("results")
-         result_para.textContent = `${name} you have attained a grade of ${grade}`
+        // console.log(userName, userScore);
+        let grade = "";
+        const scoreInNumber = parseInt(userScore);
+        if (userScore < 0 || userScore > 100) {
+            resultsOutput.textContent = "Invalid score! Enter a score between 0 and 100."
+            resultsOutput.style.fontWeight = "bold";
+            resultsOutput.style.color = "#c41e3a"
+        } else {
+            switch(true) {
+                case (scoreInNumber >=90 && scoreInNumber <= 100):
+                    grade = "A";
+                    break;
+                case (scoreInNumber >=80):
+                    grade = "B";
+                    break;
+                case (scoreInNumber >=70):
+                    grade = "C";
+                    break;
+                default:
+                    grade = "D";
+            }
+        }
+        
+        document.getElementById("results").textContent = `The results are out ${userName}, you have a grade of ${grade}`;
+        resultsOutput.style.color = "#06402b"
     }
-
 }
