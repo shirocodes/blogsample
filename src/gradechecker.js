@@ -1,48 +1,46 @@
-//Listen for DOM to load
+//listen to the document loading 
 document.addEventListener("DOMContentLoaded", function() {
     const myForm = document.getElementById("submissionForm");
-    // console.log("This is my form", myForm);
     myForm.addEventListener("submit", submitForm);
-})
+}
+)
 
-function submitForm(event) { //Receiving event object with submission details and will execute after the submission:
+function submitForm(event) {
     event.preventDefault();
-    // console.log("The function is listening to the event");
 
-    //get submission details
+    //get submission inputs
     const userName = document.getElementById("name").value.trim();
     const userScore = document.getElementById("score").value.trim();
-    const resultsOutput = document.getElementById("results");
+    const resultOutput = document.getElementById("results");
 
-    //checking the submitted details
-    if (userName === "" || userScore === ""||isNaN(userScore)) {
-        resultsOutput.textContent = "Insert your name and score.";
-        resultsOutput.style.color ="#ff3333";
-    } else {
-        // console.log(userName, userScore);
-        let grade = "";
-        const scoreInNumber = parseInt(userScore);
-        if (userScore < 0 || userScore > 100) {
-            resultsOutput.textContent = "Invalid score! Enter a score between 0 and 100."
-            resultsOutput.style.fontWeight = "bold";
-            resultsOutput.style.color = "#c41e3a"
-        } else {
-            switch(true) {
-                case (scoreInNumber >=90 && scoreInNumber <= 100):
-                    grade = "A";
-                    break;
-                case (scoreInNumber >=80):
-                    grade = "B";
-                    break;
-                case (scoreInNumber >=70):
-                    grade = "C";
-                    break;
-                default:
-                    grade = "D";
-            }
-        }
-        
-        document.getElementById("results").textContent = `The results are out ${userName}, you have a grade of ${grade}`;
-        resultsOutput.style.color = "#06402b"
+    //check for user inputs
+    if(!userName && !userScore) {
+        resultOutput.textContent = "Insert your name and score.";
+        resultOutput.style.color = "red";
+    } else if (userScore < 0 || userScore > 100) {
+        resultOutput.textContent = "Invalid score! Enter a score between 0 and 100.";
+        resultOutput.style.color = "red";
     }
+    let gradeCheck = "";
+    const scoreInNumber = parseInt(userScore);
+
+    if (scoreInNumber >=80) {
+        gradeCheck = "A"
+        // console.log("my grade is", gradeCheck);
+        resultOutput.textContent = "Your grade is A";
+    } else if (scoreInNumber >=70) {
+        gradeCheck = "B"
+        resultOutput.textContent = "Your grade is B";
+    } else if (scoreInNumber >=50) {
+        gradeCheck = "C"
+        resultOutput.textContent = "Your grade is C";
+    } else (resultOutput.textContent = "It is a fail");
+
+
+
+            
+
+
+        
 }
+
